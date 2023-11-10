@@ -1,0 +1,84 @@
+
+.headerDiv{
+    border: 5px solid blue;
+    padding: 15px;
+    margin: 10px;
+    background-color: black;
+    position: relative; /* Make sure the div is positioned relative */
+    border-width: 2px 4px 6px 8px;
+
+}
+
+
+.headerDiv h1 {
+  font-size: 70px; /* Adjust the font size as needed */
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+.myLogo{
+    float: right;
+}
+h1{
+    color: orange;
+}
+.navbar-container {
+  display: flex;
+  justify-content: center;
+}
+
+.navbar {
+  background-image: linear-gradient(to right, orange, blue);
+  overflow: hidden;
+  border-bottom: 5px solid blue;
+  padding: 10px;
+  color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center; /* Center the text */
+}
+
+.navbar li {
+  display: inline-block; /* Make the list items inline-block */
+  margin: 0 10px; 
+  list-style-type: none;
+  padding: 15px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  transition: background-color 0.3s;
+}
+
+
+.navbar li:last-child {
+  border-right: none;
+}
+
+.navbar li:hover {
+  background-color: blue;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+}
+.navbar a:hover {
+}
+
+
+

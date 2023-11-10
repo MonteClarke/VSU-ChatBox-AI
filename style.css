@@ -1,0 +1,617 @@
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-image: linear-gradient(to right, orange, blue);
+
+}
+.chatbot-toggler {
+  position: fixed;
+  bottom: 30px;
+  right: 35px;
+  outline: none;
+  border: none;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #185cad;
+  transition: all 0.2s ease;
+}
+body.show-chatbot .chatbot-toggler {
+  transform: rotate(90deg);
+}
+.chatbot-toggler span {
+  color: #fff;
+  position: absolute;
+}
+.chatbot-toggler span:last-child,
+body.show-chatbot .chatbot-toggler span:first-child  {
+  opacity: 0;
+}
+body.show-chatbot .chatbot-toggler span:last-child {
+  opacity: 1;
+}
+.chatbot {
+  position: fixed;
+  right: 35px;
+  bottom: 90px;
+  width: 420px;
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.5);
+  transform-origin: bottom right;
+  box-shadow: 0 0 128px 0 rgba(0,0,0,0.1),
+              0 32px 64px -48px rgba(0,0,0,0.5);
+  transition: all 0.1s ease;
+}
+body.show-chatbot .chatbot {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+}
+.chatbot header {
+  padding: 16px 0;
+  position: relative;
+  text-align: center;
+  color: #fff;
+  background: #f48124;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.chatbot header span {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  display: none;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+header h2 {
+  font-size: 1.4rem;
+}
+.chatbot .chatbox {
+  overflow-y: auto;
+  height: 510px;
+  padding: 30px 20px 100px;
+}
+.chatbot :where(.chatbox, textarea)::-webkit-scrollbar {
+  width: 6px;
+}
+.chatbot :where(.chatbox, textarea)::-webkit-scrollbar-track {
+  background: #fff;
+  border-radius: 25px;
+}
+.chatbot :where(.chatbox, textarea)::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 25px;
+}
+.chatbox .chat {
+  display: flex;
+  list-style: none;
+}
+.chatbox .outgoing {
+  margin: 20px 0;
+  justify-content: flex-end;
+}
+.chatbox .incoming span {
+  width: 32px;
+  height: 32px;
+  color: #fff;
+  cursor: default;
+  text-align: center;
+  line-height: 32px;
+  align-self: flex-end;
+  background: #724ae8;
+  border-radius: 4px;
+  margin: 0 10px 7px 0;
+}
+.chatbox .chat p {
+  white-space: pre-wrap;
+  padding: 12px 16px;
+  border-radius: 10px 10px 0 10px;
+  max-width: 75%;
+  color: #fff;
+  font-size: 0.95rem;
+  background: #724ae8;
+}
+.chatbox .incoming p {
+  border-radius: 10px 10px 10px 0;
+}
+.chatbox .chat p.error {
+  color: #721c24;
+  background: #f8d7da;
+}
+.chatbox .incoming p {
+  color: #000;
+  background: #f2f2f2;
+}
+.chatbot .chat-input {
+  display: flex;
+  gap: 5px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  padding: 3px 20px;
+  border-top: 1px solid #ddd;
+}
+.chat-input textarea {
+  height: 55px;
+  width: 100%;
+  border: none;
+  outline: none;
+  resize: none;
+  max-height: 180px;
+  padding: 15px 15px 15px 0;
+  font-size: 0.95rem;
+}
+.chat-input span {
+  align-self: flex-end;
+  color: #724ae8;
+  cursor: pointer;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  visibility: hidden;
+  font-size: 1.35rem;
+}
+.chat-input textarea:valid ~ span {
+  visibility: visible;
+}
+
+@media (max-width: 490px) {
+  .chatbot-toggler {
+    right: 20px;
+    bottom: 20px;
+  }
+  .chatbot {
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    border-radius: 0;
+    width: 100%;
+  }
+  .chatbot .chatbox {
+    height: 90%;
+    padding: 25px 15px 100px;
+  }
+  .chatbot .chat-input {
+    padding: 5px 15px;
+  }
+  .chatbot header span {
+    display: block;
+  }
+}
+
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+  border-bottom: #04AA6D ;
+  border-style: solid;
+}
+
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+#sign{
+    float: right;
+    text-align:right;
+}
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,500);
+*:focus {
+outline: none;
+}
+
+body {
+margin: 0;
+padding: 0;
+font-size: 16px;
+color: #222;
+font-family: 'Roboto', sans-serif;
+font-weight: 300;
+}
+
+#login-box {
+position: relative;
+margin: 5% auto;
+width: 600px;
+height: 400px;
+background: #FFF;
+border-radius: 2px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.left {
+position: absolute;
+top: 0;
+left: 0;
+box-sizing: border-box;
+padding: 40px;
+width: 300px;
+height: 400px;
+}
+
+h1 {
+margin: 0 0 20px 0;
+font-weight: 300;
+font-size: 28px;
+}
+
+input[type="text"],
+input[type="password"] {
+display: block;
+box-sizing: border-box;
+margin-bottom: 20px;
+padding: 4px;
+width: 220px;
+height: 32px;
+border: none;
+border-bottom: 1px solid #AAA;
+font-family: 'Roboto', sans-serif;
+font-weight: 400;
+font-size: 15px;
+transition: 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+border-bottom: 2px solid #16a085;
+color: #16a085;
+transition: 0.2s ease;
+}
+
+input[type="submit"] {
+margin-top: 28px;
+width: 120px;
+height: 32px;
+
+background: #16a085;
+border: none;
+border-radius: 2px;
+color: #FFF;
+font-family: 'Roboto', sans-serif;
+font-weight: 500;
+text-transform: uppercase;
+transition: 0.1s ease;
+cursor: pointer;
+}
+
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+opacity: 0.8;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+transition: 0.1s ease;
+}
+
+input[type="submit"]:active {
+opacity: 1;
+box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+transition: 0.1s ease;
+}
+
+.or {
+position: absolute;
+top: 180px;
+left: 280px;
+width: 40px;
+height: 40px;
+background: #DDD;
+border-radius: 50%;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+line-height: 40px;
+text-align: center;
+}
+
+.right {
+position: absolute;
+top: 0;
+right: 0;
+box-sizing: border-box;
+padding: 40px;
+width: 300px;
+height: 400px;
+background: url('https://goo.gl/YbktSj');
+background-size: cover;
+background-position: center;
+border-radius: 0 2px 2px 0;
+}
+
+.right .loginwith {
+display: block;
+margin-bottom: 40px;
+font-size: 28px;
+color: #FFF;
+text-align: center;
+}
+
+button.social-signin {
+margin-bottom: 20px;
+width: 220px;
+height: 36px;
+border: none;
+border-radius: 2px;
+color: #FFF;
+font-family: 'Roboto', sans-serif;
+font-weight: 500;
+transition: 0.2s ease;
+cursor: pointer;
+}
+
+.number {
+color: #FFF;
+text-align:center;
+font-size: 50px;
+}
+
+.email {
+color: #FFF;
+text-shadow: #333;
+text-align:center;
+font-size: 50px;
+}
+
+.moto {
+text-align: center;
+margin-top: 22px;
+font-size: 90px;
+color: black;
+font-family: 'Oswald', sans-serif;
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 50%;
+color: #04AA6D
+}
+
+.homepage {
+background-image: url(knife-food-wood-table.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+}
+
+.moto2{
+text-align:center;
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 50%;
+}
+
+
+.des{
+color: grey;
+display: inline-block;
+text-align: left;
+}
+
+.heading{
+padding: 30px;
+background-color: white;
+background-size: contain;
+margin: 50px;
+border-radius: 20px;
+border-style: solid;
+}
+
+#recipe{
+display: none;
+}
+
+.wusthof{
+background-color: white;
+margin-left: 50px;
+margin-right: 50px;
+margin-top: 20px;
+
+}
+
+.desc{
+text-align: center;
+margin-top: 0px;
+color: black;
+font-family: 'Oswald', sans-serif;
+display: block;
+margin-left: 75px;
+margin-right: 75px;
+}
+
+.nutrition{
+width: 300;
+}
+
+.scription{
+font-size: 20px;
+}
+
+.header{
+text-align: center;
+margin-left: 50px;
+margin-right: 50px;
+margin-top: 50px;
+font-size: 67px ;
+font-family: 'Cookie', cursive;
+color: #16a085
+}
+
+.about{
+text-align: center;
+font-size: 20px;
+margin-top: 50px;
+margin-left: 50px;
+margin-right: 50px;
+font-family: 'Roboto', sans-serif;
+}
+
+.kitchen{
+display: block;
+margin-right: auto;
+margin-left: auto;
+width: 700px
+}
+
+.trust{
+font-size: 20px;
+margin-left: 25px;
+margin-right: 25px;
+font-family: 'Roboto', sans-serif;
+}
+
+.trusting{
+font-size: 30px;
+margin-left: 25px;
+margin-right: 25px;  
+margin-top: 20px;
+margin-bottom: 10px
+}
+
+.sub{
+color: grey;
+}
+
+.around{
+border-color: #222;
+border-style: solid;
+margin-left: 200px;
+margin-right:200px;
+margin-top: 20px;
+}
+
+.margin{
+margin-left: 50px;
+}
+
+.contact{
+font-size: 100px;
+color: #16a085;
+}
+
+.info{
+font-size: 50px;
+margin-top: 0px;
+
+}
+
+.lasagna{
+color: #04AA6D
+}
+
+.how-to{
+font-family: 'Roboto', sans-serif;
+}
+
+.contact{
+margin-right: 100px;
+font-size: 50px;
+}
+
+.info{
+margin-right: 100px;
+font-size: 25px;
+}
+
+.knife{
+color: #16a085
+}
+
+@media screen and (max-width: 650px) {
+.image {
+  width: 300px
+}
+#login-box{
+  width:300px
+}
+
+.contact{
+  font-size: 50px
+}
+
+.info{
+  font-size: 20px;
+  word-spacing: 1.5px;
+}
+
+.around{
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+.kitchen{
+  width: 300px
+}
+
+
+.nutrition{
+  width: 100px;
+}
+
+
+}
+
+#bottom{
+float: right;
+text-align:right;
+}
+
+.bottomnav{
+background-color: #333;
+overflow: hidden;
+border-top: #04AA6D ;
+border-style: solid;
+}
+
+.bottomnav a {
+float: left;
+color: #f2f2f2;
+text-align: center;
+padding: 14px 16px;
+text-decoration: none;
+font-size: 17px;
+}
+
+.bottomnav a:hover {
+background-color: #ddd;
+color: black;
+}
+
+@media screen and (max-width: 1150px){
+.kitchen{
+  width: 300px
+}
+.around{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+}
+.Course{
+  padding: 10px;
+}
+

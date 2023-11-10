@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>VSU Notification System</title>
+    <link rel="stylesheet" href="notification.css">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+    <script src="script.js" defer></script>
+    <link rel="icon" type="image/jpg" href="vsu_logo.png">
+  </head>
+  <body>
+    <div class="headerDiv">
+      <h1><center>VSU Open CHAT AI</center></h1> 
+      <img src="vsu_logo.png" alt="VSU Logo" width="150px">
+      <img class="myLogo" src="vsu_logo.png" alt="VSU Logo" width="150px">
+      </div>
+    <div class="navbar">
+        <ul class="centered-list">
+            <li><a href="Homepage.html">Home</a></li>
+            <li><a class="active">Course Review Chat</a></li>
+            <li><a href="Overall.html">Chat Log</a></li>
+  
+      </ul>
+    </div>
+    <button class="chatbot-toggler">
+      <span class="material-symbols-rounded">mode_comment</span>
+      <span class="material-symbols-outlined">close</span>
+    </button>
+    <div class="chatbot">
+      <header>
+        <h2>Chatbot</h2>
+        <span class="close-btn material-symbols-outlined">close</span>
+      </header>
+      <ul class="chatbox">
+        <li class="chat incoming">
+          <span class="material-symbols-outlined">smart_toy</span>
+          <p>Hi there I'm the VSU chatbox! 👋 Please select a course and tell me about your experience in that course.</p>
+        </li>
+      </ul>
+      <div class="chat-input">
+        <textarea placeholder="Enter a message..." spellcheck="false" required></textarea>
+        <span id="send-btn" class="material-symbols-rounded">send</span>
+      </div>
+    </div>
+
+    <div class="Course">
+      <label for="courseSelection" style="color: white; font-size: x-large;">Select a course:</label>
+      <select id="courseSelection">
+        <option value="CSCI 101">Introduction to the CS Profession</option>
+        <option value="CSCI 150">Programming I</option>
+        <option value="CSCI 151">Programming I Lab</option>
+        <option value="MATH 260">Calculus I</option>
+        <option value="ENGL 110">Composition I</option>
+        <option value="CSCI 250">Programming II</option>
+        <option value="CSCI 251">Programming II Lab</option>
+        <option value="MATH 261">Calculus II</option>
+        <option value="ENGL 111">Composition II</option>
+        <option value="CSCI 287">Data Structures</option>
+        <option value="CSCI 303">Computer Organization and Architecture</option>
+        <option value="MATH 280">Discrete Math for Computer Science</option>
+        <option value="ENGL 342">Technical Communication</option>
+        <option value="CSCI 281">Discrete Structures</option>
+        <option value="CSCI 296">Web Programming</option>
+        <option value="CSCI 356">Database Systems</option>
+        <option value="PHIL 450">Applied Ethics</option>
+        <!-- Add more courses as needed -->
+      </select>
+    </div>
+
+  </body>
+</html>
